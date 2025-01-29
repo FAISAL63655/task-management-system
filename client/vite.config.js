@@ -7,13 +7,18 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: true,
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom', '@mui/material', '@mui/icons-material'],
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          mui: ['@mui/material', '@mui/icons-material'],
           chart: ['recharts']
-        }
+        },
+        format: 'es',
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
       }
     }
   },
