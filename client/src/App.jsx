@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -94,8 +94,16 @@ function App() {
                     }
                   />
 
-                  {/* Redirect to login if no route matches */}
-                  <Route path="*" element={<Login />} />
+                  {/* Redirect to tasks if authenticated, login if not */}
+                  <Route
+                    path="/"
+                    element={
+                      <PrivateRoute>
+                        <Tasks />
+                      </PrivateRoute>
+                    }
+                  />
+                  <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
                 </div>
               </NotificationProvider>
