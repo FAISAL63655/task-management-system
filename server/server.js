@@ -15,9 +15,11 @@ const app = express();
 app.use(express.json());
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? process.env.CLIENT_URL 
+    ? ['https://dsadfdged.netlify.app', process.env.CLIENT_URL].filter(Boolean)
     : 'http://localhost:5175',
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Routes
