@@ -1,0 +1,89 @@
+:root {
+  font-family: 'Tajawal', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  direction: rtl;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* RTL support for Material-UI components */
+.MuiTextField-root,
+.MuiFormControl-root {
+  text-align: right !important;
+}
+
+.MuiInputLabel-root {
+  right: 1.75rem !important;
+  left: auto !important;
+  transform-origin: right !important;
+}
+
+.MuiOutlinedInput-root {
+  text-align: right !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  text-align: right !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Link styles */
+a {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Form styles */
+form {
+  width: 100%;
+}
+
+/* Button hover effect */
+.MuiButton-contained:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Alert styles */
+.MuiAlert-root {
+  border-radius: 8px;
+}
+
+/* Paper component shadow */
+.MuiPaper-root {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
